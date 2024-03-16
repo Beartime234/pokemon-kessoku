@@ -14740,6 +14740,27 @@ static void Cmd_handleballthrow(void)
         MarkBattlerForControllerExec(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_WallyBallThrow;
     }
+    else if (B_ALWAYS_SUCCESSFUL_CATCH == TRUE)
+    {
+        BtlController_EmitBallThrowAnim(gBattlerAttacker, BUFFER_A, BALL_3_SHAKES_SUCCESS);
+        MarkBattlerForControllerExec(gBattlerAttacker);
+        TryBattleFormChange(gBattlerTarget, FORM_CHANGE_END_BATTLE);
+        gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
+        SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_POKEBALL, &gLastUsedItem);
+
+        if (CalculatePlayerPartyCount() == PARTY_SIZE)
+            gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+        else
+            gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+
+        if (gLastUsedItem == ITEM_HEAL_BALL)
+        {
+            MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
+            HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], STATUS1_ANY, gBattlerTarget);
+            gBattleMons[gBattlerTarget].hp = gBattleMons[gBattlerTarget].maxHP;
+            SetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_HP, &gBattleMons[gBattlerTarget].hp);
+        }
+    }
     else
     {
         u32 odds, i;
