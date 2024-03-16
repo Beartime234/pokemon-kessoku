@@ -991,8 +991,9 @@
 
 // Custom Items
 #define ITEM_INFINITE_REPEL 816
+#define ITEM_ENDLESS_CANDY 817
 
-#define ITEMS_COUNT 817
+#define ITEMS_COUNT 818
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
