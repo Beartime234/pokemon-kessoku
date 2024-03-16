@@ -221,7 +221,7 @@
 #define B_LAST_USED_BALL            TRUE       // If TRUE, the "last used ball" feature from Gen 7 will be implemented
 #define B_LAST_USED_BALL_BUTTON     R_BUTTON   // If last used ball is implemented, this button (or button combo) will trigger throwing the last used ball.
 #define B_LAST_USED_BALL_CYCLE      TRUE       // If TRUE, then holding B_LAST_USED_BALL_BUTTON while pressing the D-Pad cycles through the balls
-#define B_ALWAYS_SUCCESSFUL_CATCH   TRUE      // If TRUE, all wild Pokémon will be caught first try, regardless of any other factors.
+#define B_ALWAYS_SUCCESSFUL_CATCH   TRUE       // If TRUE, all wild Pokémon will be caught first try, regardless of any other factors.
 
 // Other settings
 #define B_DOUBLE_WILD_CHANCE            0          // % chance of encountering two Pokémon in a Wild Encounter.
