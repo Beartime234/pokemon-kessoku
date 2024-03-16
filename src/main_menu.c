@@ -164,7 +164,7 @@
  */
 
 #define OPTION_MENU_FLAG (1 << 15)
-#define INTRO_POKEMON SPECIES_PSYDUCK
+#define INTRO_POKEMON SPECIES_MEW
 
 // Static type declarations
 
