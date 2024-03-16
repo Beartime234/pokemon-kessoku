@@ -12616,4 +12616,16 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    // Custom Items
+    [ITEM_INFINITE_REPEL] =
+    {
+        .name = _("InfiniteRepel"),
+        .price = 0,
+        .importance = 1,
+        .description = sInfiniteRepelDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
+    },
 };
