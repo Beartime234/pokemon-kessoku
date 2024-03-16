@@ -1533,5 +1533,11 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_EndlessCandy(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_EndlessCandy;
+    SetUpItemUseCallback(taskId);
+}
+
 
 #undef tUsingRegisteredKeyItem

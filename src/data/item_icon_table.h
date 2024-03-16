@@ -876,6 +876,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
 
     // Custom Items
     [ITEM_INFINITE_REPEL] = {gItemIcon_Repel, gItemIconPalette_MaxRepel},
+    [ITEM_ENDLESS_CANDY] = {gItemIcon_RareCandy, gItemIconPalette_RareCandy},
 
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
