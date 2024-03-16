@@ -5687,6 +5687,8 @@ static void PartyMenuTryEvolution(u8 taskId)
         FreePartyPointers();
         if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_RareCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
             gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingRareCandy;
+        else if (ItemId_GetFieldFunc(gSpecialVar_ItemId) == ItemUseOutOfBattle_EndlessCandy && gPartyMenu.menuType == PARTY_MENU_TYPE_FIELD && CheckBagHasItem(gSpecialVar_ItemId, 1))
+            gCB2_AfterEvolution = CB2_ReturnToPartyMenuUsingRareCandy;
         else
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
         BeginEvolutionScene(mon, targetSpecies, TRUE, gPartyMenu.slotId);
@@ -7669,7 +7671,6 @@ void ItemUseCB_EndlessCandy(u8 taskId, TaskFunc task)
 
         if (targetSpecies != SPECIES_NONE)
         {
-            RemoveBagItem(gSpecialVar_ItemId, 1);
             FreePartyPointers();
             gCB2_AfterEvolution = gPartyMenu.exitCallback;
             BeginEvolutionScene(mon, targetSpecies, TRUE, gPartyMenu.slotId);
