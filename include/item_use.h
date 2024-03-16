@@ -54,4 +54,7 @@ enum {
 
 bool32 CanThrowBall(void);
 
+// Custom Items
+void ItemUseOutOfBattle_InfiniteRepel(u8);
+
 #endif // GUARD_ITEM_USE_H

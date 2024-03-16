@@ -3993,3 +3993,8 @@ static const u8 sGlimmeringCharmDesc[] = _(
     "A charm that will\n"
     "raise the shards\n"
     "from Tera Raids.");
+
+static const u8 sInfiniteRepelDesc[] = _(
+    "Repels wild Pokémon\n"
+    "for an infinite\n"
+    "number of steps.");
