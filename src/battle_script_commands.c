@@ -4079,6 +4079,12 @@ static void Cmd_getexp(void)
 
     gBattlerFainted = GetBattlerForBattleScript(cmd->battler);
 
+    if (B_NEVER_GAIN_EXP)
+    {
+        gBattleScripting.getexpState = 6;
+        gBattleMoveDamage = 0;
+    }
+
     switch (gBattleScripting.getexpState)
     {
     case 0: // check if should receive exp at all
