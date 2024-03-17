@@ -27,6 +27,7 @@
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
+static void RemoveIVIndexFromList(u8 *ivs, u8 selectedIv);
 
 void HealPlayerParty(void)
 {
@@ -98,6 +99,117 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 u
     }
     return sentToPc;
 }
+
+u8 GiveStarterMon(u16 species, u8 level, u16 item)
+{
+    u16 nationalDexNum;
+    int sentToPc;
+    u8 heldItem[2];
+    struct Pokemon mon;
+    u16 targetSpecies;
+
+    if (OW_SYNCHRONIZE_NATURE >= GEN_6 && (gSpeciesInfo[species].eggGroups[0] == EGG_GROUP_NO_EGGS_DISCOVERED || OW_SYNCHRONIZE_NATURE == GEN_7))
+        CreateMonWithNature(&mon, species, level, USE_RANDOM_IVS, PickWildMonNature());
+    else
+        CreateMon(&mon, species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+
+    heldItem[0] = item;
+    heldItem[1] = item >> 8;
+    SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
+
+    // Fix 3 of the IVs to 31 TODO THIS IS A TEMPORARY FIX
+    // const u8 ivs[3] = {0, 2, 3};
+    // SetMonData(&mon, MON_DATA_HP_IV, &ivs[0]);
+    // SetMonData(&mon, MON_DATA_ATK_IV, &ivs[1]);
+    // SetMonData(&mon, MON_DATA_DEF_IV, &ivs[2]);
+
+    // Select the 3 IVs that will be perfected. - Taken from Legendary Stats
+    u8 i;
+    u32 iv;
+    u8 availableIVs[NUM_STATS];
+    u8 selectedIvs[STARTER_PERFECT_IV_COUNT];
+
+    iv = MAX_PER_STAT_IVS;
+    // Initialize a list of IV indices.
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        availableIVs[i] = i;
+    }
+
+    for (i = 0; i < STARTER_PERFECT_IV_COUNT; i++)
+    {
+        u8 index = Random() % (NUM_STATS - i);
+        selectedIvs[i] = availableIVs[index];
+        RemoveIVIndexFromList(availableIVs, index);
+    }
+    for (i = 0; i < STARTER_PERFECT_IV_COUNT; i++)
+    {
+        switch (selectedIvs[i])
+        {
+            case STAT_HP:
+                SetMonData(&mon, MON_DATA_HP_IV, &iv);
+            break;
+            case STAT_ATK:
+                SetMonData(&mon, MON_DATA_ATK_IV, &iv);
+            break;
+            case STAT_DEF:
+                SetMonData(&mon, MON_DATA_DEF_IV, &iv);
+            break;
+            case STAT_SPEED:
+                SetMonData(&mon, MON_DATA_SPEED_IV, &iv);
+            break;
+            case STAT_SPATK:
+                SetMonData(&mon, MON_DATA_SPATK_IV, &iv);
+            break;
+            case STAT_SPDEF:
+                SetMonData(&mon, MON_DATA_SPDEF_IV, &iv);
+            break;
+        }
+    }
+
+    // In case a mon with a form changing item is given. Eg: SPECIES_ARCEUS_NORMAL with ITEM_SPLASH_PLATE will transform into SPECIES_ARCEUS_WATER upon gifted.
+    targetSpecies = GetFormChangeTargetSpecies(&mon, FORM_CHANGE_ITEM_HOLD, 0);
+    if (targetSpecies != SPECIES_NONE)
+    {
+        SetMonData(&mon, MON_DATA_SPECIES, &targetSpecies);
+        CalculateMonStats(&mon);
+    }
+
+    sentToPc = GiveMonToPlayer(&mon);
+    nationalDexNum = SpeciesToNationalPokedexNum(species);
+
+    // Don't set Pokédex flag for MON_CANT_GIVE
+    switch(sentToPc)
+    {
+        case MON_GIVEN_TO_PARTY:
+        case MON_GIVEN_TO_PC:
+            GetSetPokedexFlag(nationalDexNum, FLAG_SET_SEEN);
+        GetSetPokedexFlag(nationalDexNum, FLAG_SET_CAUGHT);
+        break;
+    }
+    return sentToPc;
+}
+
+// Duplicate from pokemon.c
+static void RemoveIVIndexFromList(u8 *ivs, u8 selectedIv)
+{
+    s32 i, j;
+    u8 temp[NUM_STATS];
+
+    ivs[selectedIv] = 0xFF;
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        temp[i] = ivs[i];
+    }
+
+    j = 0;
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        if (temp[i] != 0xFF)
+            ivs[j++] = temp[i];
+    }
+}
+
 
 u8 ScriptGiveEgg(u16 species)
 {
