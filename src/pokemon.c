@@ -4527,6 +4527,11 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
 
 void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 {
+
+	// If in the Config, the EV Gain is disabled, then return
+    if (P_NO_EV_GAIN == TRUE)
+        return;
+
     u8 evs[NUM_STATS];
     u16 evIncrease = 0;
     u16 totalEVs = 0;
