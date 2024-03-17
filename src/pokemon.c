@@ -833,20 +833,48 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         u32 iv;
         value = Random();
 
+        // HP IV
         iv = value & MAX_IV_MASK;
+        if (iv < MIN_PER_STAT_IVS) {
+            iv = MIN_PER_STAT_IVS;
+        }
         SetBoxMonData(boxMon, MON_DATA_HP_IV, &iv);
+
+        // Attack IV
         iv = (value & (MAX_IV_MASK << 5)) >> 5;
+        if (iv < MIN_PER_STAT_IVS) {
+            iv = MIN_PER_STAT_IVS;
+        }
         SetBoxMonData(boxMon, MON_DATA_ATK_IV, &iv);
+
+        // Defense IV
         iv = (value & (MAX_IV_MASK << 10)) >> 10;
+        if (iv < MIN_PER_STAT_IVS) {
+            iv = MIN_PER_STAT_IVS;
+        }
         SetBoxMonData(boxMon, MON_DATA_DEF_IV, &iv);
 
         value = Random();
 
+        // Speed IV
         iv = value & MAX_IV_MASK;
+        if (iv < MIN_PER_STAT_IVS) {
+            iv = MIN_PER_STAT_IVS;
+        }
         SetBoxMonData(boxMon, MON_DATA_SPEED_IV, &iv);
+
+        // Special Attack IV
         iv = (value & (MAX_IV_MASK << 5)) >> 5;
+        if (iv < MIN_PER_STAT_IVS) {
+            iv = MIN_PER_STAT_IVS;
+        }
         SetBoxMonData(boxMon, MON_DATA_SPATK_IV, &iv);
+
+        // Special Defense IV
         iv = (value & (MAX_IV_MASK << 10)) >> 10;
+        if (iv < MIN_PER_STAT_IVS) {
+            iv = MIN_PER_STAT_IVS;
+        }
         SetBoxMonData(boxMon, MON_DATA_SPDEF_IV, &iv);
 
         if (gSpeciesInfo[species].allPerfectIVs)
