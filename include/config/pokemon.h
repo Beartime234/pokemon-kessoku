@@ -44,6 +44,7 @@
 #define P_EV_CAP                    GEN_LATEST  // Since Gen 6, the max EVs per stat is 252 instead of 255.
 #define P_SHOW_TERA_TYPE            GEN_LATEST  // Since Gen 9, the Tera Type is shown on the summary screen.
 #define P_TM_LITERACY               GEN_LATEST  // Since Gen 6, TM illiterate Pokémon can learn TMs that teach moves that are in their level-up learnsets.
+#define P_NO_EV_GAIN                TRUE        // If TRUE, Pokémon will not gain EVs from battling.
 
 // Learnset helper toggles
 #define P_LEARNSET_HELPER_TEACHABLE TRUE        // If TRUE, teachable_learnsets.h will be populated by tools/learnset_helpers/teachable.py using the included JSON files based on available TMs and tutors.
