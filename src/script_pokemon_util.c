@@ -117,13 +117,7 @@ u8 GiveStarterMon(u16 species, u8 level, u16 item)
     heldItem[1] = item >> 8;
     SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
 
-    // Fix 3 of the IVs to 31 TODO THIS IS A TEMPORARY FIX
-    // const u8 ivs[3] = {0, 2, 3};
-    // SetMonData(&mon, MON_DATA_HP_IV, &ivs[0]);
-    // SetMonData(&mon, MON_DATA_ATK_IV, &ivs[1]);
-    // SetMonData(&mon, MON_DATA_DEF_IV, &ivs[2]);
-
-    // Select the 3 IVs that will be perfected. - Taken from Legendary Stats
+    // Select the 3 IVs that will be perfected. - Taken from Legendary Stats / pokemon.c
     u8 i;
     u32 iv;
     u8 availableIVs[NUM_STATS];
@@ -166,6 +160,7 @@ u8 GiveStarterMon(u16 species, u8 level, u16 item)
             break;
         }
     }
+    // end code from Legendary Stats / pokemon.c
 
     // In case a mon with a form changing item is given. Eg: SPECIES_ARCEUS_NORMAL with ITEM_SPLASH_PLATE will transform into SPECIES_ARCEUS_WATER upon gifted.
     targetSpecies = GetFormChangeTargetSpecies(&mon, FORM_CHANGE_ITEM_HOLD, 0);
