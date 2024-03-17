@@ -3530,6 +3530,22 @@ static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n)
     ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
 }
+// Colors Perfect IVs
+static void BufferIV(u8 *dst, u32 stat, u32 strId, u32 n)
+{
+    static const u8 sTextPerfectIV[] = _("{COLOR}{06}");
+    static const u8 sTextIVNeutral[] = _("{COLOR}{01}");
+    u8 *txtPtr;
+
+    if (stat == 31)
+        txtPtr = StringCopy(dst, sTextPerfectIV);
+    else
+        txtPtr = StringCopy(dst, sTextIVNeutral);
+
+    ConvertIntToDecimalStringN(txtPtr, stat, STR_CONV_MODE_RIGHT_ALIGN, n);
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(strId, dst);
+}
+
 
 static void BufferIvOrEvStats(u8 mode)
 {
@@ -3568,15 +3584,15 @@ static void BufferIvOrEvStats(u8 mode)
     {
     case 0:
     case 9:
-        BufferStat(gStringVar1, 0, hp, 0, 7);
-        BufferStat(gStringVar2, 0, atk, 1, 7);
-        BufferStat(gStringVar3, 0, def, 2, 7);
+        BufferIV(gStringVar1, hp, 0, 7);
+        BufferIV(gStringVar2, atk, 1, 7);
+        BufferIV(gStringVar3, def, 2, 7);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayoutIVEV);
         PrintLeftColumnStats();
 
-        BufferStat(gStringVar1, 0, spA, 0, 3);
-        BufferStat(gStringVar2, 0, spD, 1, 3);
-        BufferStat(gStringVar3, 0, spe, 2, 3);
+        BufferIV(gStringVar1, spA, 0, 3);
+        BufferIV(gStringVar2, spD, 1, 3);
+        BufferIV(gStringVar3, spe, 2, 3);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
         PrintRightColumnStats();
         break;
