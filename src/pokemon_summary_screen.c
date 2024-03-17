@@ -68,7 +68,7 @@ enum {
 #define PSS_LABEL_WINDOW_PROMPT_CANCEL 4
 #define PSS_LABEL_WINDOW_PROMPT_INFO 5
 #define PSS_LABEL_WINDOW_PROMPT_SWITCH 6
-#define PSS_LABEL_WINDOW_UNUSED1 7
+#define PSS_LABEL_WINDOW_PROMPT_IVS 7
 
 // Info screen
 #define PSS_LABEL_WINDOW_POKEMON_INFO_RENTAL 8
@@ -458,14 +458,14 @@ static const struct WindowTemplate sSummaryTemplate[] =
         .paletteNum = 7,
         .baseBlock = 121,
     },
-    [PSS_LABEL_WINDOW_UNUSED1] = {
+    [PSS_LABEL_WINDOW_PROMPT_IVS] = {
         .bg = 0,
-        .tilemapLeft = 11,
-        .tilemapTop = 4,
-        .width = 0,
+        .tilemapLeft = 22,
+        .tilemapTop = 0,
+        .width = 8,
         .height = 2,
-        .paletteNum = 6,
-        .baseBlock = 137,
+        .paletteNum = 7,
+        .baseBlock = 671,
     },
     [PSS_LABEL_WINDOW_POKEMON_INFO_RENTAL] = {
         .bg = 0,
@@ -714,6 +714,10 @@ static const u8 sTextColors[][3] =
 static const u8 sButtons_Gfx[][4 * TILE_SIZE_4BPP] = {
     INCBIN_U8("graphics/summary_screen/a_button.4bpp"),
     INCBIN_U8("graphics/summary_screen/b_button.4bpp"),
+};
+
+static const u8 sButtons_Gfx2[][4 * TILE_SIZE_4BPP] = {
+    INCBIN_U8("graphics/summary_screen/r_button.4bpp"),
 };
 
 static void (*const sTextPrinterFunctions[])(void) =
@@ -2930,6 +2934,14 @@ static void PrintAOrBButtonIcon(u8 windowId, bool8 bButton, u32 x)
     BlitBitmapToWindow(windowId, button, x, 0, 16, 16);
 }
 
+static void PrintRButtonIcon(u8 windowId, bool8 bButton, u32 x)
+{
+    // bButton is unused but could be used to determine which button to print if we need an L button icon
+    const u8 *button;
+    button = sButtons_Gfx2[0];
+    BlitBitmapToWindow(windowId, button, x, 0, 16, 16);
+}
+
 static void PrintPageNamesAndStats(void)
 {
     int stringXPos;
@@ -2945,8 +2957,15 @@ static void PrintPageNamesAndStats(void)
     iconXPos = stringXPos - 16;
     if (iconXPos < 0)
         iconXPos = 0;
-    PrintAOrBButtonIcon(PSS_LABEL_WINDOW_PROMPT_CANCEL, FALSE, iconXPos);
+    PrintAOrBButtonIcon(PSS_LABEL_WINDOW_PROMPT_CANCEL, TRUE, iconXPos);
     PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_CANCEL, gText_Cancel2, stringXPos, 1, 0, 0);
+
+    stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, gText_Ivs, 62);
+    iconXPos = stringXPos - 16;
+    if (iconXPos < 0)
+        iconXPos = 0;
+    PrintRButtonIcon(PSS_LABEL_WINDOW_PROMPT_IVS, TRUE, iconXPos);
+    PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_IVS, gText_Ivs, stringXPos, 1, 0, 0);
 
     stringXPos = GetStringRightAlignXOffset(FONT_NORMAL, gText_Info, 62);
     iconXPos = stringXPos - 16;
@@ -3005,6 +3024,7 @@ static void PutPageWindowTilemaps(u8 page)
         break;
     case PSS_PAGE_SKILLS:
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_TITLE);
+        PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_IVS);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);
@@ -3054,6 +3074,7 @@ static void ClearPageWindowTilemaps(u8 page)
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_INFO_TYPE);
         break;
     case PSS_PAGE_SKILLS:
+        ClearWindowTilemap(PSS_LABEL_WINDOW_PROMPT_IVS);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT);
         ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);
