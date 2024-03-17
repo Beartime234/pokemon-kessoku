@@ -9818,7 +9818,7 @@ const struct Item gItems[] =
     // Custom Items
     [ITEM_INFINITE_REPEL] =
     {
-        .name = _("InfiniteRepel"),
+        .name = _("Perm. Repel"),
         .price = 0,
         .importance = 1,
         .description = sInfiniteRepelDesc,
