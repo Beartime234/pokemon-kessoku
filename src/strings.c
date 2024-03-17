@@ -1860,3 +1860,4 @@ const u8 gText_PlantBerry[] = _("PLANT BERRY");
 // Custom Strings
 const u8 gText_InfiniteRepelOn[] = _("The Infinite Repel is now on.");
 const u8 gText_InfiniteRepelOff[] = _("The Infinite Repel is now off.");
+const u8 gText_Ivs[] = _("IVS");
