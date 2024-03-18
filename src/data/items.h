@@ -12623,7 +12623,10 @@ const struct Item gItemsInfo[] =
         .name = _("Perm. Repel"),
         .price = 0,
         .importance = 1,
-        .description = sInfiniteRepelDesc,
+        .description = COMPOUND_STRING(
+            "Repels wild Pokémon\n"
+            "for an infinite\n"
+            "number of steps."),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
@@ -12634,9 +12637,13 @@ const struct Item gItemsInfo[] =
         .name = _("Endless Candy"),
         .price = 0,
         .importance = 1,
-        .description = sEndlessCandyDesc,
+        .description = COMPOUND_STRING(
+            "A candy that raises\n"
+            "the level of a\n"
+            "Pokémon to the cap."),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
+        .effect = gItemEffect_RareCandy,
         .fieldUseFunc = ItemUseOutOfBattle_EndlessCandy,
     },
 

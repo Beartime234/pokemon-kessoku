@@ -1504,8 +1504,6 @@ void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
     Task_CloseCantUseKeyItemMessage(taskId);
 }
 
-// Custom Items
-
 void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
 {
     bool8 infiniteRepelOn = FlagGet(OW_FLAG_NO_ENCOUNTER);
@@ -1513,7 +1511,7 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
     {
         FlagToggle(OW_FLAG_NO_ENCOUNTER);
         PlaySE(SE_REPEL);
-        if(gTasks[taskId].tUsingRegisteredKeyItem){
+        if (!gTasks[taskId].data[2]) { // to account for pressing select in the overworld
             DisplayItemMessageOnField(taskId, gText_InfiniteRepelOn, Task_CloseCantUseKeyItemMessage);
         }
         else{
@@ -1524,11 +1522,11 @@ void ItemUseOutOfBattle_InfiniteRepel(u8 taskId)
     {
         FlagToggle(OW_FLAG_NO_ENCOUNTER);
         PlaySE(SE_PC_OFF);
-        if (gTasks[taskId].tUsingRegisteredKeyItem){
+        if (!gTasks[taskId].data[2]){
             DisplayItemMessageOnField(taskId, gText_InfiniteRepelOff, Task_CloseCantUseKeyItemMessage);
         }
         else{
-            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOn, CloseItemMessage);
+            DisplayItemMessage(taskId, 1, gText_InfiniteRepelOff, CloseItemMessage);
         }
     }
 }

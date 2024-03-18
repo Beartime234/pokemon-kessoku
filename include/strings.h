@@ -3065,5 +3065,6 @@ extern const u8 gText_PlantBerry[];
 extern const u8 gText_InfiniteRepelOn[];
 extern const u8 gText_InfiniteRepelOff[];
 extern const u8 gText_Ivs[];
+extern const u8 gText_EndlessCandyMaxLevel[];
 
 #endif // GUARD_STRINGS_H

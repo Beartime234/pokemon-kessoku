@@ -1859,5 +1859,7 @@ const u8 gText_PlantBerry[] = _("PLANT BERRY");
 
 // Custom Strings
 const u8 gText_InfiniteRepelOn[] = _("The Permenent Repel has been turned on{PAUSE_UNTIL_PRESS}");
-const u8 gText_InfiniteRepelOff[] = _("The Permnenet. Repel has been turned off.{PAUSE_UNTIL_PRESS}");
+const u8 gText_InfiniteRepelOff[] = _("The Permnenet Repel has been turned off{PAUSE_UNTIL_PRESS}");
 const u8 gText_Ivs[] = _("IVS");
+
+const u8 gText_EndlessCandyMaxLevel[] = _("Is at level cap.{PAUSE_UNTIL_PRESS}");
