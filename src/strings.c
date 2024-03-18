@@ -1858,6 +1858,6 @@ const u8 gText_Fertilize[] = _("FERTILIZE");
 const u8 gText_PlantBerry[] = _("PLANT BERRY");
 
 // Custom Strings
-const u8 gText_InfiniteRepelOn[] = _("The Perm. Repel is now on.");
-const u8 gText_InfiniteRepelOff[] = _("The Perm. Repel is now off.");
+const u8 gText_InfiniteRepelOn[] = _("The Permenent Repel has been turned on{PAUSE_UNTIL_PRESS}");
+const u8 gText_InfiniteRepelOff[] = _("The Permnenet. Repel has been turned off.{PAUSE_UNTIL_PRESS}");
 const u8 gText_Ivs[] = _("IVS");
