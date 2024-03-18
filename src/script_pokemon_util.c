@@ -118,6 +118,8 @@ u8 GiveStarterMon(u16 species, u8 level, u16 item)
         }
     }
     // end code from Legendary Stats / pokemon.c
+    CalculateMonStats(&mon);
+
 
     // In case a mon with a form changing item is given. Eg: SPECIES_ARCEUS_NORMAL with ITEM_SPLASH_PLATE will transform into SPECIES_ARCEUS_WATER upon gifted.
     targetSpecies = GetFormChangeTargetSpecies(&mon, FORM_CHANGE_ITEM_HOLD, 0);
