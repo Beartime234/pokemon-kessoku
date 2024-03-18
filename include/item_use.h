@@ -63,4 +63,8 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon);
 void ItemUseOutOfBattle_InfiniteRepel(u8);
 void ItemUseOutOfBattle_EndlessCandy(u8);
 
+// Custom Items
+void ItemUseOutOfBattle_InfiniteRepel(u8);
+void ItemUseOutOfBattle_EndlessCandy(u8);
+
 #endif // GUARD_ITEM_USE_H
