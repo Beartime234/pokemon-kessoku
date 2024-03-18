@@ -52,6 +52,7 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
+	call_if_set FLAG_NUZLOCKE_ITEMS, LittlerootTown_EventScript_SetupGiveNuzlockeItems
 	end
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
@@ -1021,3 +1022,132 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "Let's go to my LAB.$"
 
 `
+
+script LittlerootTown_EventScript_SetupGiveNuzlockeItems{
+    if (var(VAR_GIVE_NUZLOCKE_ITEMS) == 0  && var(VAR_LITTLEROOT_TOWN_STATE) == 2) {
+        clearflag(FLAG_NUZLOCKE_ITEMS)
+    }
+}
+
+
+script LittlerootTown_Trigger_GiveNuzlocke_Direct{
+    lock
+    faceplayer
+
+    if (var(VAR_GIVE_NUZLOCKE_ITEMS) == 0) {
+        msgbox(format("I have something for you, {PLAYER}"))
+    }
+    if (var(VAR_GIVE_NUZLOCKE_ITEMS) == 1) {
+        msgbox(format("Feel free to not use these items if you don't want to."))
+        msgbox(format("For your information though EV's are not available in this game for balance. POKéMON are also caught 100% of the time. For more details see the documentation at https://kessoku.poketime.dev/docs"))
+        release
+        end
+    }
+
+    giveitem(ITEM_INFINITE_REPEL, 1)
+    waitmessage
+    msgbox(InfiniteRepel)
+    giveitem(ITEM_ENDLESS_CANDY, 1)
+    waitmessage
+    msgbox(EndlessCandy)
+    msgbox(GrindingIsCringe)
+    waitmessage
+
+    setvar(VAR_GIVE_NUZLOCKE_ITEMS, 1)
+    release
+    end
+}
+
+
+script LittlerootTown_Trigger_GiveNuzlocke_ItemsRight{
+	lock
+    applymovement(9, Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveApproachPlayerRight)
+    waitmovement(0)
+
+    msgbox(WaitUp)
+    giveitem(ITEM_INFINITE_REPEL, 1)
+    waitmessage
+    msgbox(InfiniteRepel)
+    giveitem(ITEM_ENDLESS_CANDY, 1)
+    waitmessage
+    msgbox(EndlessCandy)
+    msgbox(GrindingIsCringe)
+    waitmessage
+
+    applymovement(9, Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveReturnPlayerRight)
+    waitmovement(0)
+
+    setvar(VAR_GIVE_NUZLOCKE_ITEMS, 1)
+    release
+    end
+}
+
+
+movement Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveApproachPlayerRight{
+    walk_left * 2
+    walk_up * 6
+    walk_right
+    face_down
+}
+
+movement Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveReturnPlayerRight{
+    walk_left
+    walk_down * 6
+    walk_right * 2
+    face_left
+}
+
+script LittlerootTown_Trigger_GiveNuzlocke_ItemsLeft{
+	lock
+    applymovement(9, Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveApproachPlayerLeft)
+    waitmovement(0)
+
+    msgbox(WaitUp)
+    giveitem(ITEM_INFINITE_REPEL, 1)
+    waitmessage
+    msgbox(InfiniteRepel)
+    giveitem(ITEM_ENDLESS_CANDY, 1)
+    waitmessage
+    msgbox(EndlessCandy)
+    msgbox(GrindingIsCringe)
+    waitmessage
+
+    applymovement(9, Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveReturnPlayerLeft)
+    waitmovement(0)
+
+    setvar(VAR_GIVE_NUZLOCKE_ITEMS, 1)
+    release
+    end
+}
+
+
+movement Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveApproachPlayerLeft{
+    walk_left
+    walk_up * 6
+    walk_left
+    face_down
+}
+
+movement Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveReturnPlayerLeft{
+    walk_right
+    walk_down * 6
+    walk_right
+    face_left
+}
+
+
+text WaitUp {
+    format("Wait up!")
+}
+
+text InfiniteRepel {
+    format("That item will prevent POKéMON from appearing in the wild when turned on.")
+}
+
+text EndlessCandy {
+    format("That item will level up POKéMON instantly. Up until the level cap of the next gym.")
+}
+
+text GrindingIsCringe {
+    format("Grinding is cringe - pChal")
+}
