@@ -104,5 +104,6 @@ void MoveDeleterChooseMoveToForget(void);
 
 // Custom
 void ItemUseCB_EndlessCandy(u8 taskId, TaskFunc task);
+bool8 PlayerHasMove(u16 move);
 
 #endif // GUARD_PARTY_MENU_H
