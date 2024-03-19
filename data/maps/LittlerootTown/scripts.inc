@@ -2274,6 +2274,34 @@ Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveReturnPlayerLeft:
 	face_left
 	step_end
 
+LittlerootTown_Trigger_GiveSuperrod_Direct::
+# 1139 "data/maps/LittlerootTown/scripts.pory"
+	lock
+# 1140 "data/maps/LittlerootTown/scripts.pory"
+	faceplayer
+# 1142 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_GIVE_LITTLEROOT_SUPERROD, 1
+	goto_if_eq LittlerootTown_Trigger_GiveSuperrod_Direct_2
+# 1148 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittlerootTown_Trigger_GiveSuperrod_Direct_Text_1
+# 1149 "data/maps/LittlerootTown/scripts.pory"
+	giveitem ITEM_SUPER_ROD, 1
+# 1150 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+# 1152 "data/maps/LittlerootTown/scripts.pory"
+	setvar VAR_GIVE_LITTLEROOT_SUPERROD, 1
+# 1154 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+LittlerootTown_Trigger_GiveSuperrod_Direct_2:
+# 1143 "data/maps/LittlerootTown/scripts.pory"
+	msgbox LittlerootTown_Trigger_GiveSuperrod_Direct_Text_0
+# 1144 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+
 LittlerootTown_Trigger_GiveNuzlocke_Direct_Text_0:
 # 1038 "data/maps/LittlerootTown/scripts.pory"
 	.string "I have something for you, {PLAYER}$"
@@ -2285,28 +2313,39 @@ LittlerootTown_Trigger_GiveNuzlocke_Direct_Text_1:
 
 LittlerootTown_Trigger_GiveNuzlocke_Direct_Text_2:
 # 1042 "data/maps/LittlerootTown/scripts.pory"
-	.string "For your information though EV's are\n"
-	.string "not available in this game for balance.\l"
+	.string "For your information EV's are not\n"
+	.string "available in this game for balance.\l"
 	.string "POKéMON are also caught 100% of the\l"
-	.string "time. For more details see the\l"
+	.string "time. For a full list see the\l"
 	.string "documentation at\l"
 	.string "https://kessoku.poketime.dev/docs$"
 
+LittlerootTown_Trigger_GiveSuperrod_Direct_Text_0:
+# 1143 "data/maps/LittlerootTown/scripts.pory"
+	.string "There is even more unique POKéMON to\n"
+	.string "catch in the water when surfing.$"
+
+LittlerootTown_Trigger_GiveSuperrod_Direct_Text_1:
+# 1148 "data/maps/LittlerootTown/scripts.pory"
+	.string "Fishing is a great way to catch POKéMON\n"
+	.string "in routes that don't have tall grass.\l"
+	.string "Use this to fish in the water.$"
+
 WaitUp::
-# 1139 "data/maps/LittlerootTown/scripts.pory"
+# 1159 "data/maps/LittlerootTown/scripts.pory"
 	.string "Wait up!$"
 
 InfiniteRepel::
-# 1143 "data/maps/LittlerootTown/scripts.pory"
+# 1163 "data/maps/LittlerootTown/scripts.pory"
 	.string "That item will prevent POKéMON from\n"
 	.string "appearing in the wild when turned on.$"
 
 EndlessCandy::
-# 1147 "data/maps/LittlerootTown/scripts.pory"
+# 1167 "data/maps/LittlerootTown/scripts.pory"
 	.string "That item will level up POKéMON\n"
 	.string "instantly. Up until the level cap of the\l"
 	.string "next gym.$"
 
 GrindingIsCringe::
-# 1151 "data/maps/LittlerootTown/scripts.pory"
+# 1171 "data/maps/LittlerootTown/scripts.pory"
 	.string "Grinding is cringe - pChal$"

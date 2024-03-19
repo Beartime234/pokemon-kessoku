@@ -11560,6 +11560,95 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_LITTLEROOT_TOWN",
+          "base_label": "gLittlerootTown",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SQUIRTLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SQUIRTLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SQUIRTLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SQUIRTLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MAGIKARP"
+              }
+            ]
+          }
         }
       ]
     },

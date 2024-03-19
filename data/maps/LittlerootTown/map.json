@@ -48,8 +48,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 14,
-      "y": 17,
+      "x": 17,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -136,6 +136,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LittlerootTown_Trigger_GiveNuzlocke_Direct",
       "flag": "FLAG_NUZLOCKE_ITEMS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 16,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LittlerootTown_Trigger_GiveSuperrod_Direct",
+      "flag": "0"
     }
   ],
   "warp_events": [

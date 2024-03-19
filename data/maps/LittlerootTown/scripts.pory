@@ -1039,7 +1039,7 @@ script LittlerootTown_Trigger_GiveNuzlocke_Direct{
     }
     if (var(VAR_GIVE_NUZLOCKE_ITEMS) == 1) {
         msgbox(format("Feel free to not use these items if you don't want to."))
-        msgbox(format("For your information though EV's are not available in this game for balance. POKéMON are also caught 100% of the time. For more details see the documentation at https://kessoku.poketime.dev/docs"))
+        msgbox(format("For your information EV's are not available in this game for balance. POKéMON are also caught 100% of the time. For a full list see the documentation at https://kessoku.poketime.dev/docs"))
         release
         end
     }
@@ -1133,6 +1133,26 @@ movement Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveReturnPlayerLeft{
     walk_down * 6
     walk_right
     face_left
+}
+
+script LittlerootTown_Trigger_GiveSuperrod_Direct{
+    lock
+    faceplayer
+
+    if (var(VAR_GIVE_LITTLEROOT_SUPERROD) == 1) {
+        msgbox(format("There is even more unique POKéMON to catch in the water when surfing."))
+        release
+        end
+    }
+
+    msgbox(format("Fishing is a great way to catch POKéMON in routes that don't have tall grass. Use this to fish in the water."))
+    giveitem(ITEM_SUPER_ROD, 1)
+    waitmessage
+
+    setvar(VAR_GIVE_LITTLEROOT_SUPERROD, 1)
+
+    release
+    end
 }
 
 
