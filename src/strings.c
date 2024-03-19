@@ -58,46 +58,28 @@ ALIGNED(4) const u8 gText_PickCancel[] = _("{DPAD_UPDOWN}PICK {A_BUTTON}{B_BUTTO
 ALIGNED(4) const u8 gText_AButtonExit[] = _("{A_BUTTON}EXIT");
 const u8 gText_BirchBoy[] = _("BOY");
 const u8 gText_BirchGirl[] = _("GIRL");
-const u8 gText_DefaultNameStu[] = _("STU");
-const u8 gText_DefaultNameMilton[] = _("MILTON");
-const u8 gText_DefaultNameTom[] = _("TOM");
-const u8 gText_DefaultNameKenny[] = _("KENNY");
-const u8 gText_DefaultNameReid[] = _("REID");
-const u8 gText_DefaultNameJude[] = _("JUDE");
-const u8 gText_DefaultNameJaxson[] = _("JAXSON");
-const u8 gText_DefaultNameEaston[] = _("EASTON");
-const u8 gText_DefaultNameWalker[] = _("WALKER");
-const u8 gText_DefaultNameTeru[] = _("TERU");
-const u8 gText_DefaultNameJohnny[] = _("JOHNNY");
-const u8 gText_DefaultNameBrett[] = _("BRETT");
-const u8 gText_DefaultNameSeth[] = _("SETH");
-const u8 gText_DefaultNameTerry[] = _("TERRY");
-const u8 gText_DefaultNameCasey[] = _("CASEY");
-const u8 gText_DefaultNameDarren[] = _("DARREN");
-const u8 gText_DefaultNameLandon[] = _("LANDON");
-const u8 gText_DefaultNameCollin[] = _("COLLIN");
-const u8 gText_DefaultNameStanley[] = _("STANLEY");
-const u8 gText_DefaultNameQuincy[] = _("QUINCY");
-const u8 gText_DefaultNameKimmy[] = _("KIMMY");
-const u8 gText_DefaultNameTiara[] = _("TIARA");
-const u8 gText_DefaultNameBella[] = _("BELLA");
-const u8 gText_DefaultNameJayla[] = _("JAYLA");
-const u8 gText_DefaultNameAllie[] = _("ALLIE");
-const u8 gText_DefaultNameLianna[] = _("LIANNA");
-const u8 gText_DefaultNameSara[] = _("SARA");
-const u8 gText_DefaultNameMonica[] = _("MONICA");
-const u8 gText_DefaultNameCamila[] = _("CAMILA");
-const u8 gText_DefaultNameAubree[] = _("AUBREE");
-const u8 gText_DefaultNameRuthie[] = _("RUTHIE");
-const u8 gText_DefaultNameHazel[] = _("HAZEL");
-const u8 gText_DefaultNameNadine[] = _("NADINE");
-const u8 gText_DefaultNameTanja[] = _("TANJA");
-const u8 gText_DefaultNameYasmin[] = _("YASMIN");
-const u8 gText_DefaultNameNicola[] = _("NICOLA");
-const u8 gText_DefaultNameLillie[] = _("LILLIE");
-const u8 gText_DefaultNameTerra[] = _("TERRA");
-const u8 gText_DefaultNameLucy[] = _("LUCY");
-const u8 gText_DefaultNameHalie[] = _("HALIE");
+
+// BOYS
+// TODO one day change the names of the vars to be the actual names
+const u8 gText_DefaultNameStu[] = _("JOSH");  // Me
+const u8 gText_DefaultNameMilton[] = _("JAN");  // PCHAL
+const u8 gText_DefaultNameTom[] = _("MAX");   // MaxMoeFoe
+const u8 gText_DefaultNameKenny[] = _("TANNER");  // Smallant
+const u8 gText_DefaultNameReid[] = _("WOLFEY");  // WolfeyVGC
+const u8 gText_DefaultNameJude[] = _("JACOB");  // ALPHARAD
+const u8 gText_DefaultNameJaxson[] = _("ERIC");  // PointCrow
+const u8 gText_DefaultNameEaston[] = _("EATON");  // Me x2
+
+// GIRL Names
+const u8 gText_DefaultNameKimmy[] = _("JAIDEN");  // JaidenAnimations
+const u8 gText_DefaultNameTiara[] = _("MINNIE");  // My Wife <3
+const u8 gText_DefaultNameBella[] = _("HYOON");   // Hyoon
+const u8 gText_DefaultNameJayla[] = _("LINDSEY");  // Lindz
+const u8 gText_DefaultNameAllie[] = _("SIERRA");  // Sierra Dawn
+const u8 gText_DefaultNameLianna[] = _("KAT"); // Shiny Catherine
+const u8 gText_DefaultNameSara[] = _("SARA");  // Not sure
+const u8 gText_DefaultNameMonica[] = _("MONICA");  // Not sure
+
 const u8 gText_ThisIsAPokemon[] = _("This is what we call a “POKéMON.”{PAUSE 96}\p");
 const u8 gText_5MarksPokemon[] = _("????? POKéMON");
 const u8 gText_UnkHeight[] = _("{CLEAR_TO 0x0C}??'??”");
@@ -1859,8 +1841,8 @@ const u8 gText_Fertilize[] = _("FERTILIZE");
 const u8 gText_PlantBerry[] = _("PLANT BERRY");
 
 // Custom Strings
-const u8 gText_InfiniteRepelOn[] = _("The Permenent Repel has been turned on{PAUSE_UNTIL_PRESS}");
-const u8 gText_InfiniteRepelOff[] = _("The Permnenet Repel has been turned off{PAUSE_UNTIL_PRESS}");
-const u8 gText_Ivs[] = _("IVS");
+const u8 gText_InfiniteRepelOn[] = _("The Permenent Repel has been turned on{PAUSE 32}");
+const u8 gText_InfiniteRepelOff[] = _("The Permnenet Repel has been turned off{PAUSE 32}");
+const u8 gText_Ivs[] = _("IV");
 
 const u8 gText_EndlessCandyMaxLevel[] = _("Is at level cap.{PAUSE_UNTIL_PRESS}");

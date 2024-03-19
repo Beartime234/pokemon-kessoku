@@ -52,7 +52,6 @@ LittlerootTown_OnTransition:
 	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
-	call_if_set FLAG_NUZLOCKE_ITEMS, LittlerootTown_EventScript_SetupGiveNuzlockeItems
 	end
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
@@ -1023,13 +1022,6 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 `
 
-script LittlerootTown_EventScript_SetupGiveNuzlockeItems{
-    if (var(VAR_GIVE_NUZLOCKE_ITEMS) == 0  && var(VAR_LITTLEROOT_TOWN_STATE) == 2) {
-        clearflag(FLAG_NUZLOCKE_ITEMS)
-    }
-}
-
-
 script LittlerootTown_Trigger_GiveNuzlocke_Direct{
     lock
     faceplayer
@@ -1061,6 +1053,8 @@ script LittlerootTown_Trigger_GiveNuzlocke_Direct{
 
 script LittlerootTown_Trigger_GiveNuzlocke_ItemsRight{
 	lock
+	applymovement(9, Common_Movement_ExclamationMark)
+	waitmovement(0)
     applymovement(9, Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveApproachPlayerRight)
     waitmovement(0)
 
@@ -1099,6 +1093,8 @@ movement Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveReturnPlayerRight{
 
 script LittlerootTown_Trigger_GiveNuzlocke_ItemsLeft{
 	lock
+	applymovement(9, Common_Movement_ExclamationMark)
+	waitmovement(0)
     applymovement(9, Nuzlocke_LittlerootTown_Movement_NuzlockeItemGiveApproachPlayerLeft)
     waitmovement(0)
 
