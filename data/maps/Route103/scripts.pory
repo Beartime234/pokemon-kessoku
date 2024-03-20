@@ -355,3 +355,14 @@ Route103_Text_RouteSign:
 	.string "{DOWN_ARROW} OLDALE TOWN$"
 
 `
+
+script Route103_EventScript_Gentleman {
+    msgbox(Route103_Text_Gentleman, MSGBOX_NPC)
+    end
+}
+
+text Route103_Text_Gentleman {
+    "I already have so many GRASS-type\n"
+    "POKéMON, so I'm looking for a WATER\p"
+    "type. Maybe I should go fishing…"
+}

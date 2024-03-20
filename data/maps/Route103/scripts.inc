@@ -708,3 +708,15 @@ Route103_Text_RouteSign:
 	.string "ROUTE 103\n"
 # 355 "data/maps/Route103/scripts.pory"
 	.string "{DOWN_ARROW} OLDALE TOWN$"
+
+Route103_EventScript_Gentleman::
+# 360 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_Gentleman, MSGBOX_NPC
+	end
+
+
+Route103_Text_Gentleman::
+# 364 "data/maps/Route103/scripts.pory"
+	.string "I already have so many GRASS-type\n"
+	.string "POKéMON, so I'm looking for a WATER\p"
+	.string "type. Maybe I should go fishing…$"
