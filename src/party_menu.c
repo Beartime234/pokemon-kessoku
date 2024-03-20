@@ -7851,7 +7851,9 @@ void ItemUseCB_EndlessCandy(u8 taskId, TaskFunc task)
         else
         {
             gPartyMenuUseExitCallback = FALSE;
-            DisplayPartyMenuMessage(gText_EndlessCandyMaxLevel, TRUE);
+            ConvertIntToDecimalStringN(gStringVar1, GetCurrentLevelCap(), STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringExpandPlaceholders(gStringVar2, gText_EndlessCandyMaxLevel);
+            DisplayPartyMenuMessage(gStringVar2, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
