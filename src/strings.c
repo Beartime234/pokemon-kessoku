@@ -60,7 +60,7 @@ const u8 gText_BirchBoy[] = _("BOY");
 const u8 gText_BirchGirl[] = _("GIRL");
 
 const u8 gText_DifficultyNormal[] = _("REG.");
-const u8 gText_DifficultyChallenge[] = _("HARD");
+const u8 gText_DifficultyChallenge[] = _("BLIND");
 
 // BOYS
 // TODO one day change the names of the vars to be the actual names

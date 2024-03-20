@@ -3833,7 +3833,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_Calvin1),
+        .party = TRAINER_PARTY_BLIND(sParty_Calvin1, sPartyCalvin1Blind),
     },
 
     [TRAINER_BILLY] =

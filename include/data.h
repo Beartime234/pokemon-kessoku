@@ -74,7 +74,8 @@ struct TrainerMon
     bool8 shouldTerastal : 1;
 };
 
-#define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
+#define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray), .partySizeBlind = ARRAY_COUNT(partyArray), .partyBlind = partyArray
+#define TRAINER_PARTY_BLIND(partyArray, partyArrayBlind) partyArray, .partySize = ARRAY_COUNT(partyArray), .partyBlind = partyArrayBlind, .partySizeBlind = ARRAY_COUNT(partyArrayBlind)
 
 struct Trainer
 {
@@ -89,7 +90,9 @@ struct Trainer
              bool8 mugshotEnabled:1;
              u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
     /*0x1F*/ u8 mugshotColor;
-    /*0x20*/ u8 partySize;
+    /*0x20*/ u8 partySize:4;
+                   u8 partySizeBlind:4;
+    /*0x21*/ const struct TrainerMon *partyBlind;
 };
 
 struct TrainerClass

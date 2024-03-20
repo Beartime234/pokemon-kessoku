@@ -2321,10 +2321,10 @@ static void DebugAction_Util_Player_Gender(u8 taskId)
 
 static void DebugAction_Util_Player_Diff(u8 taskId)
 {
-    if (gSaveBlock2Ptr->gameDifficulty == DIFFICULTY_MODE_NORMAL)
-        gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_MODE_HARD;
+    if (gSaveBlock2Ptr->gameDifficulty == DIFFICULTY_MODE_REG)
+        gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_MODE_BLIND;
     else
-        gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_MODE_NORMAL;
+        gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_MODE_REG;
     Debug_DestroyMenu_Full(taskId);
     ScriptContext_Enable();
 }

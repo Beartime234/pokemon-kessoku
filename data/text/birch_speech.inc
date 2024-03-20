@@ -36,15 +36,15 @@ gText_Birch_BoyOrGirl::
 	.string "Or are you a girl?$"
 
 gText_Birch_DifficultyChoice::
-	.string "You can select a difficulty to play. \n"
+	.string "You can select a difficulty to play.\n"
 	.string "REG. is best if playing\p"
-	.string "blind and HARD is best if\n"
-	.string "playing with documentation\p"
+	.string "with documentation and BLIND\n"
+	.string "is for playing without.\p"
 	.string "What difficulty do \n"
 	.string "you want to play?$"
 
 gText_Birch_DifficultyExplain::
-	.string "What difficulty do \n"
+	.string "What difficulty do\n"
 	.string "you want to play?\p"
 
 gText_Birch_WhatsYourName::
