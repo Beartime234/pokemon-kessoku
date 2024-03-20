@@ -342,6 +342,12 @@ extern const u8 gText_ThisIsAPokemon[];
 extern const u8 gText_Birch_MainSpeech[];
 extern const u8 gText_Birch_AndYouAre[];
 extern const u8 gText_Birch_BoyOrGirl[];
+
+// Custom
+extern const u8 gText_Birch_DifficultyChoice[];
+extern const u8 gText_Birch_DifficultyExplain[];
+// End Custom
+
 extern const u8 gText_Birch_WhatsYourName[];
 extern const u8 gText_Birch_SoItsPlayer[];
 extern const u8 gText_Birch_YourePlayer[];
@@ -3043,5 +3049,8 @@ extern const u8 gText_InfiniteRepelOn[];
 extern const u8 gText_InfiniteRepelOff[];
 extern const u8 gText_Ivs[];
 extern const u8 gText_EndlessCandyMaxLevel[];
+
+extern const u8 gText_DifficultyNormal[];
+extern const u8 gText_DifficultyChallenge[];
 
 #endif // GUARD_STRINGS_H

@@ -59,6 +59,9 @@ ALIGNED(4) const u8 gText_AButtonExit[] = _("{A_BUTTON}EXIT");
 const u8 gText_BirchBoy[] = _("BOY");
 const u8 gText_BirchGirl[] = _("GIRL");
 
+const u8 gText_DifficultyNormal[] = _("REG.");
+const u8 gText_DifficultyChallenge[] = _("HARD");
+
 // BOYS
 // TODO one day change the names of the vars to be the actual names
 const u8 gText_DefaultNameStu[] = _("JOSH");  // Me

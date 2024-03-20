@@ -95,6 +95,7 @@ enum UtilDebugMenu
     DEBUG_UTIL_MENU_ITEM_WATCHCREDITS,
     DEBUG_UTIL_MENU_ITEM_PLAYER_NAME,
     DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER,
+    DEBUG_UTIL_MENU_ITEM_PLAYER_DIFF,
     DEBUG_UTIL_MENU_ITEM_PLAYER_ID,
     DEBUG_UTIL_MENU_ITEM_CHEAT,
     DEBUG_UTIL_MENU_ITEM_EXPANSION_VER,
@@ -370,6 +371,7 @@ static void DebugAction_Util_SetWallClock(u8 taskId);
 static void DebugAction_Util_WatchCredits(u8 taskId);
 static void DebugAction_Util_Player_Name(u8 taskId);
 static void DebugAction_Util_Player_Gender(u8 taskId);
+static void DebugAction_Util_Player_Diff(u8 taskId);
 static void DebugAction_Util_Player_Id(u8 taskId);
 static void DebugAction_Util_CheatStart(u8 taskId);
 static void DebugAction_Util_ExpansionVersion(u8 taskId);
@@ -528,6 +530,7 @@ static const u8 sDebugText_Util_SetWallClock[] =             _("Set wall clockâ€
 static const u8 sDebugText_Util_WatchCredits[] =             _("Watch creditsâ€¦{CLEAR_TO 110}{RIGHT_ARROW}");
 static const u8 sDebugText_Util_Player_Name[] =              _("Player name");
 static const u8 sDebugText_Util_Player_Gender[] =            _("Toggle gender");
+static const u8 sDebugText_Util_Player_Difficulty[] =        _("Toggle difficulty");
 static const u8 sDebugText_Util_Player_Id[] =                _("New Trainer ID");
 static const u8 sDebugText_Util_CheatStart[] =               _("Cheat start");
 static const u8 sDebugText_Util_ExpansionVersion[] =         _("Expansion Version");
@@ -716,6 +719,7 @@ static const struct ListMenuItem sDebugMenu_Items_Utilities[] =
     [DEBUG_UTIL_MENU_ITEM_WATCHCREDITS]    = {sDebugText_Util_WatchCredits,     DEBUG_UTIL_MENU_ITEM_WATCHCREDITS},
     [DEBUG_UTIL_MENU_ITEM_PLAYER_NAME]     = {sDebugText_Util_Player_Name,      DEBUG_UTIL_MENU_ITEM_PLAYER_NAME},
     [DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER]   = {sDebugText_Util_Player_Gender,    DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER},
+    [DEBUG_UTIL_MENU_ITEM_PLAYER_DIFF]     = {sDebugText_Util_Player_Difficulty,DEBUG_UTIL_MENU_ITEM_PLAYER_DIFF},
     [DEBUG_UTIL_MENU_ITEM_PLAYER_ID]       = {sDebugText_Util_Player_Id,        DEBUG_UTIL_MENU_ITEM_PLAYER_ID},
     [DEBUG_UTIL_MENU_ITEM_CHEAT]           = {sDebugText_Util_CheatStart,       DEBUG_UTIL_MENU_ITEM_CHEAT},
     [DEBUG_UTIL_MENU_ITEM_EXPANSION_VER]   = {sDebugText_Util_ExpansionVersion, DEBUG_UTIL_MENU_ITEM_EXPANSION_VER},
@@ -885,6 +889,7 @@ static void (*const sDebugMenu_Actions_Utilities[])(u8) =
     [DEBUG_UTIL_MENU_ITEM_WATCHCREDITS]    = DebugAction_Util_WatchCredits,
     [DEBUG_UTIL_MENU_ITEM_PLAYER_NAME]     = DebugAction_Util_Player_Name,
     [DEBUG_UTIL_MENU_ITEM_PLAYER_GENDER]   = DebugAction_Util_Player_Gender,
+    [DEBUG_UTIL_MENU_ITEM_PLAYER_DIFF]     = DebugAction_Util_Player_Diff,
     [DEBUG_UTIL_MENU_ITEM_PLAYER_ID]       = DebugAction_Util_Player_Id,
     [DEBUG_UTIL_MENU_ITEM_CHEAT]           = DebugAction_Util_CheatStart,
     [DEBUG_UTIL_MENU_ITEM_EXPANSION_VER]   = DebugAction_Util_ExpansionVersion,
@@ -2314,6 +2319,16 @@ static void DebugAction_Util_Player_Gender(u8 taskId)
     ScriptContext_Enable();
 }
 
+static void DebugAction_Util_Player_Diff(u8 taskId)
+{
+    if (gSaveBlock2Ptr->gameDifficulty == DIFFICULTY_MODE_NORMAL)
+        gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_MODE_HARD;
+    else
+        gSaveBlock2Ptr->gameDifficulty = DIFFICULTY_MODE_NORMAL;
+    Debug_DestroyMenu_Full(taskId);
+    ScriptContext_Enable();
+}
+
 static void DebugAction_Util_Player_Id(u8 taskId)
 {
     u32 trainerId = Random32();
@@ -2349,6 +2364,8 @@ void BufferExpansionVersion(struct ScriptContext *ctx)
     string = ConvertIntToDecimalStringN(string, EXPANSION_VERSION_MINOR, STR_CONV_MODE_LEFT_ALIGN, 3);
     *string++ = CHAR_PERIOD;
     string = ConvertIntToDecimalStringN(string, EXPANSION_VERSION_PATCH, STR_CONV_MODE_LEFT_ALIGN, 3);
+    *string++ = CHAR_HYPHEN;  // TODO bad way of showing difficulty
+    string = ConvertIntToDecimalStringN(string, gSaveBlock2Ptr->gameDifficulty, STR_CONV_MODE_LEFT_ALIGN, 3);
     if (EXPANSION_TAGGED_RELEASE)
         string = StringCopy(string, sText_Released);
     else
