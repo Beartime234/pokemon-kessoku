@@ -1792,6 +1792,9 @@ void ClearBerryTrees(void)
 
 bool32 BerryTreeGrow(struct BerryTree *tree)
 {
+    if (OW_BERRY_NEVER_GROW == TRUE)
+        return FALSE;
+        
     if (tree->stopGrowth)
         return FALSE;
 
@@ -2029,48 +2032,23 @@ static u8 GetNumStagesWateredByBerryTreeId(u8 id)
 // and bug fix: https://gist.github.com/hondew/0f0164e5b9dadfd72d24f30f2c049a0b.
 static u8 CalcBerryYieldInternal(u16 max, u16 min, u8 water)
 {
-    u32 randMin;
-    u32 randMax;
-    u32 rand;
-    u32 extraYield;
-
-    if (water == 0 || OW_BERRY_MOISTURE)
-        return min;
-    else
-    {
-        randMin = (max - min) * (water - 1);
-        randMax = (max - min) * (water);
-        rand = randMin + Random() % (randMax - randMin + 1);
-
-        // Round upwards
-        if ((rand % NUM_WATER_STAGES) >= NUM_WATER_STAGES / 2)
-            extraYield = rand / NUM_WATER_STAGES + 1;
-        else
-            extraYield = rand / NUM_WATER_STAGES;
-        return extraYield + min;
-    }
+    return (Random() % 31) + 20;
 }
 
 static u8 CalcBerryYield(struct BerryTree *tree)
 {
-    const struct Berry *berry = GetBerryInfo(tree->berry);
-    u8 min = tree->berryYield;
-    u8 max = berry->maxYield;
-    u8 result;
-    if (OW_BERRY_MULCH_USAGE && (tree->mulch == ITEM_TO_MULCH(ITEM_RICH_MULCH) || tree->mulch == ITEM_TO_MULCH(ITEM_AMAZE_MULCH)))
-        min += 2;
-    if (!(OW_BERRY_MOISTURE && OW_BERRY_ALWAYS_WATERABLE))
-        min += berry->minYield;
-    if (min >= max)
-        result = max;
-    else
-        result = CalcBerryYieldInternal(max, min, BerryTreeGetNumStagesWatered(tree));
-
-    return result;
+    return (Random() % 31) + 20;
 }
 
 static u8 GetBerryCountByBerryTreeId(u8 id)
-{
+{   
+    // if its less then 20 save a new value
+    if (gSaveBlock1Ptr->berryTrees[id].berryYield < 20)
+    {
+        u16 berryYield = (Random() % 40) + 20;
+        gSaveBlock1Ptr->berryTrees[id].berryYield = berryYield;
+        return berryYield;
+    }
     return gSaveBlock1Ptr->berryTrees[id].berryYield;
 }
 
