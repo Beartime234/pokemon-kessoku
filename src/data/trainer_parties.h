@@ -7738,12 +7738,26 @@ static const struct TrainerMon sParty_Crissy[] = {
 
 static const struct TrainerMon sParty_Rick[] = {
     {
-    .lvl = 4,
-    .species = SPECIES_WURMPLE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 9,
+    .species = SPECIES_MINCCINO,
+    .ability = ABILITY_TECHNICIAN,
+    .moves = {MOVE_DOUBLE_SLAP, MOVE_GROWL, MOVE_NONE, MOVE_NONE}
     },
     {
-    .lvl = 4,
-    .species = SPECIES_WURMPLE,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 9,
+    .species = SPECIES_TRUBBISH,
+    .ability = ABILITY_AFTERMATH,
+    .moves = {MOVE_POISON_GAS, MOVE_RECYCLE, MOVE_REST, MOVE_NONE},
+    .heldItem = ITEM_CHESTO_BERRY,
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 10,
+    .species = SPECIES_WOOPER,
+    .ability = ABILITY_WATER_ABSORB,
+    .moves = {MOVE_WATER_GUN, MOVE_TAIL_WHIP, MOVE_MUD_SHOT, MOVE_NONE}
     }
 };
 
