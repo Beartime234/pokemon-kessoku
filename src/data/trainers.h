@@ -1,3 +1,5 @@
+#define BASIC_TRAINER_AI_FLAGS (AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES)
+
 const struct Trainer gTrainers[] = {
     [TRAINER_NONE] =
     {
@@ -3832,8 +3834,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("CALVIN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY_BLIND(sParty_Calvin1, sPartyCalvin1Blind),
+        .aiFlags = BASIC_TRAINER_AI_FLAGS,
+        .party = TRAINER_PARTY(sParty_Calvin1),
     },
 
     [TRAINER_BILLY] =
