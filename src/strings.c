@@ -1849,3 +1849,5 @@ const u8 gText_InfiniteRepelOff[] = _("The Permnenet Repel has been turned off{P
 const u8 gText_Ivs[] = _("IV");
 
 const u8 gText_EndlessCandyMaxLevel[] = _("The current level cap is lvl.{STR_VAR_1}. {PAUSE 32}");
+
+const u8 gText_StarterMetLocation[] = _("dont matter");

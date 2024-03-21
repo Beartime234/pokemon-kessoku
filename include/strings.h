@@ -3053,4 +3053,6 @@ extern const u8 gText_EndlessCandyMaxLevel[];
 extern const u8 gText_DifficultyNormal[];
 extern const u8 gText_DifficultyChallenge[];
 
+extern const u8 gText_StarterMetLocation[];
+
 #endif // GUARD_STRINGS_H

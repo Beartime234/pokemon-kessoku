@@ -26,6 +26,7 @@
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
+#include "strings.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
@@ -73,6 +74,10 @@ u8 GiveStarterMon(u16 species, u8 level, u16 item)
     heldItem[0] = item;
     heldItem[1] = item >> 8;
     SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
+
+    // Set the Met Location to be a chance enocunter
+    // This doesnt work the way it should but it does
+    SetMonData(&mon, MON_DATA_MET_LOCATION, gText_StarterMetLocation);
 
     // Select the 3 IVs that will be perfected. - Taken from Legendary Stats / pokemon.c
     u8 i;
