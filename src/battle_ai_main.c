@@ -3812,7 +3812,9 @@ static u32 AI_CalcMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
             //ADJUST_SCORE(8);
         break;
     case EFFECT_PURSUIT:
-        // TODO
+        if (aiData->hpPercents[battlerDef] < 35)
+            ADJUST_SCORE(GOOD_EFFECT);
+        // TODO maye fix this to actually work
         // if (IsPredictedToSwitch(battlerDef, battlerAtk))
         //     ADJUST_SCORE(GOOD_EFFECT);
         // else if (IsPredictedToUsePursuitableMove(battlerDef, battlerAtk) && !MoveWouldHitFirst(move, battlerAtk, battlerDef)) //Pursuit against fast U-Turn
