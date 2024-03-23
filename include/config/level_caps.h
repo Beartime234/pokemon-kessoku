@@ -15,7 +15,9 @@
 #define B_LEVEL_CAP_VARIABLE            0 // event variable used to derive level cap if B_LEVEL_CAP_TYPE is set to LEVEL_CAP_VARIABLE
 #define B_NEVER_GAIN_EXP                TRUE // If set to true, Pokémon will never gain Expereince via battle
 
-#define B_RARE_CANDY_CAP                TRUE // If set to true, Rare Candies can't be used to go over the level cap
+#define B_RARE_CANDY_CAP                FALSE // If set to true, Rare Candies can't be used to go over the level cap
 #define B_LEVEL_CAP_EXP_UP              FALSE // If set to true, mons under level cap will receive more experience
+#define B_ENDLESS_CANDY_CAP             TRUE // If set to true, The endless candy will not work if the mon is at the level cap
+
 
 #endif /* GUARD_CONFIG_LEVEL_CAP_H */

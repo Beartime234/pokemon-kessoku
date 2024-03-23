@@ -1,4 +1,4 @@
-#define BASIC_TRAINER_AI_FLAGS (AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_SWITCHING | AI_FLAG_SMART_MON_CHOICES)
+#define BASIC_TRAINER_AI_FLAGS (AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_POWERFUL_STATUS | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_MON_CHOICES)
 
 const struct Trainer gTrainers[] = {
     [TRAINER_NONE] =
@@ -4014,7 +4014,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("ALLEN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .aiFlags = BASIC_TRAINER_AI_FLAGS,
         .party = TRAINER_PARTY(sParty_Allen),
     },
 
@@ -10271,5 +10271,18 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = 0,
         .party = TRAINER_PARTY(sParty_MayLinkPlaceholder),
+    },
+
+    [TRAINER_MARVIN] =
+    {
+        .trainerClass = TRAINER_CLASS_EXPERT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_EXPERT_M,
+        .trainerName = _("MARVIN"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = BASIC_TRAINER_AI_FLAGS,
+        .party = TRAINER_PARTY(sParty_Marvin),
+        .mugshotEnabled = TRUE,
     },
 };

@@ -109,3 +109,24 @@ Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
 `
+
+script Route102_EventScript_Marvin {
+	trainerbattle_single(TRAINER_MARVIN, Route102_Text_MarvinIntro, Route102_Text_MarvinDefeated)
+	msgbox(Route102_Text_MarvinPostBattle, MSGBOX_AUTOCLOSE)
+	setflag(FLAG_DEFEATED_MARVIN_BOSS)
+	end
+}
+
+text Route102_Text_MarvinIntro {
+	"Wow, a new POKéMON Trainer!\p"
+	"Let's have a good battle!"
+}
+
+text Route102_Text_MarvinDefeated {
+	"Wow, you're good!\p"
+	"Good luck in Petalburg City!"
+}
+
+text Route102_Text_MarvinPostBattle {
+	"Make sure to visit the POKéMON GYM!"
+}

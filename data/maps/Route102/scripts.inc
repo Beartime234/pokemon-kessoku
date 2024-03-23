@@ -218,3 +218,27 @@ Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 # 110 "data/maps/Route102/scripts.pory"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
+
+Route102_EventScript_Marvin::
+# 114 "data/maps/Route102/scripts.pory"
+	trainerbattle_single TRAINER_MARVIN, Route102_Text_MarvinIntro, Route102_Text_MarvinDefeated
+# 115 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_MarvinPostBattle, MSGBOX_AUTOCLOSE
+# 116 "data/maps/Route102/scripts.pory"
+	setflag FLAG_DEFEATED_MARVIN_BOSS
+	end
+
+
+Route102_Text_MarvinIntro::
+# 120 "data/maps/Route102/scripts.pory"
+	.string "Wow, a new POKéMON Trainer!\p"
+	.string "Let's have a good battle!$"
+
+Route102_Text_MarvinDefeated::
+# 125 "data/maps/Route102/scripts.pory"
+	.string "Wow, you're good!\p"
+	.string "Good luck in Petalburg City!$"
+
+Route102_Text_MarvinPostBattle::
+# 130 "data/maps/Route102/scripts.pory"
+	.string "Make sure to visit the POKéMON GYM!$"
