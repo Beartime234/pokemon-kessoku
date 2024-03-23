@@ -241,4 +241,4 @@ Route102_Text_MarvinDefeated::
 
 Route102_Text_MarvinPostBattle::
 # 130 "data/maps/Route102/scripts.pory"
-	.string "Make sure to visit the POKéMON GYM!$"
+	.string "You can now level up your POKéMON$"

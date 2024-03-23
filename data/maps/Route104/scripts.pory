@@ -1012,9 +1012,9 @@ Route104_Text_WhatsItLikeAtBottomOfSea:
 
 Route104_Text_ThrowBallAtWeakenedPokemon:
 	.string "If you're going to throw a POKé BALL,\n"
-	.string "weaken the wild POKéMON first.\p"
-	.string "It will be easier to catch if it's been\n"
-	.string "poisoned, burned, or lulled to sleep.$"
+	.string "you don't need to weaken the\p"
+	.string "wild POKéMON. As in 2024\n"
+	.string "Poke Balls always work.$"
 
 Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "You're a thief if you try to steal\n"
@@ -1023,11 +1023,13 @@ Route104_Text_OnlyThrowBallAtWildPokemon:
 	.string "wild POKéMON.$"
 
 Route104_Text_ImNotATrainer:
-	.string "Oh, no, I'm not a TRAINER.\p"
-	.string "But that's right, if TRAINERS lock eyes,\n"
-	.string "it's a challenge to battle.\p"
-	.string "If you don't want to battle, stay out\n"
-	.string "of their sight.$"
+	.string "Heart scales can be used\p"
+	.string "to change the nature\n"
+	.string "of your POKéMON. This\p"
+	.string "is useful to increase the\n"
+	.string "strength of your POKéMON's\p"
+	.string "best attribute.$"
+
 
 Route104_Text_LikeFillingMouthWithSeedsTakeThis:
 	.string "I like filling my mouth with seeds,\n"

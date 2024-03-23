@@ -9009,9 +9009,37 @@ static const struct TrainerMon sParty_Sarah[] = {
 
 static const struct TrainerMon sParty_Darian[] = {
     {
-    .lvl = 9,
-    .species = SPECIES_MAGIKARP,
-    }
+    .iv = TRAINER_PARTY_IVS(31, 31, 30, 30, 31, 31), // Hidden Power Grass
+    .lvl = 14,
+    .species = SPECIES_LUVDISC,
+    .ability = ABILITY_SWIFT_SWIM,
+    .moves = {MOVE_RAIN_DANCE, MOVE_AQUA_JET , MOVE_WATER_PULSE, MOVE_HIDDEN_POWER},
+    .heldItem = ITEM_LUM_BERRY
+    },
+    {
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 15,
+    .species = SPECIES_FEEBAS,
+    .ability = ABILITY_SWIFT_SWIM,
+    .moves = {MOVE_BRINE, MOVE_FLAIL , MOVE_NONE, MOVE_NONE},
+    .heldItem = ITEM_FOCUS_BAND
+    },
+    {
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 15,
+    .species = SPECIES_BUIZEL,
+    .ability = ABILITY_SWIFT_SWIM,
+    .moves = {MOVE_SONIC_BOOM,  MOVE_AQUA_JET, MOVE_PURSUIT, MOVE_NONE},
+    .heldItem = ITEM_LUM_BERRY
+    },
+    {
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 16,
+    .species = SPECIES_DEWPIDER,
+    .ability = ABILITY_WATER_BUBBLE,
+    .moves = {MOVE_INFESTATION, MOVE_BUG_BITE , MOVE_BUBBLE_BEAM,  MOVE_STICKY_WEB},
+    .heldItem = ITEM_WHITE_HERB
+    },
 };
 
 static const struct TrainerMon sParty_Hailey[] = {
