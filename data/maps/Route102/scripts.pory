@@ -112,8 +112,8 @@ Route102_Text_RouteSignPetalburg:
 
 script Route102_EventScript_Marvin {
 	trainerbattle_single(TRAINER_MARVIN, Route102_Text_MarvinIntro, Route102_Text_MarvinDefeated)
-	msgbox(Route102_Text_MarvinPostBattle, MSGBOX_AUTOCLOSE)
 	setflag(FLAG_DEFEATED_MARVIN_BOSS)
+	msgbox(Route102_Text_MarvinPostBattle, MSGBOX_AUTOCLOSE)
 	end
 }
 
@@ -128,5 +128,6 @@ text Route102_Text_MarvinDefeated {
 }
 
 text Route102_Text_MarvinPostBattle {
-	"You can now level up your POKéMON"
+	"Also because you defeated me\p"
+	"You can now level up your POKéMON to lvl 16!"
 }
