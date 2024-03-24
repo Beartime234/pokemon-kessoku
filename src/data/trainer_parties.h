@@ -4077,7 +4077,7 @@ static const struct TrainerMon sParty_Marvin[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 10,
+    .lvl = 9,
     .species = SPECIES_QWILFISH_HISUIAN,
     .ability = ABILITY_IRON_BARBS,
     .moves = {MOVE_POISON_STING, MOVE_FELL_STINGER, MOVE_TOXIC, MOVE_NONE},
