@@ -424,8 +424,8 @@ Route104_Text_DarianDefeat:
 	.string "What the…$"
 
 Route104_Text_DarianPostBattle:
-	.string "Hey, FEEBAS, you sure don't live up\n"
-	.string "to your name, do you?$"
+	.string "Damn, even the Eelektrik I borrowed\n"
+	.string "from Gavi didn't help!$"
 
 Route105_Text_FosterIntro:
 	.string "There's supposed to be a mystical\n"
