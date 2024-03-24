@@ -4031,21 +4031,25 @@ static const struct TrainerMon sParty_Calvin1[] = {
     .lvl = 7,
     .species = SPECIES_ROCKRUFF,
     .ability = ABILITY_KEEN_EYE,
-    .moves = {MOVE_BITE, MOVE_LEER, MOVE_SAND_ATTACK, MOVE_NONE}
+    .moves = {MOVE_BITE, MOVE_LEER, MOVE_SAND_ATTACK, MOVE_NONE},
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_ADAMANT
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
     .lvl = 8,
     .species = SPECIES_YUNGOOS,
     .ability = ABILITY_STAKEOUT,
-    .moves = {MOVE_TACKLE, MOVE_LEER, MOVE_PURSUIT, MOVE_SAND_ATTACK}
+    .moves = {MOVE_TACKLE, MOVE_LEER, MOVE_PURSUIT, MOVE_SAND_ATTACK},
+    .nature = NATURE_ADAMANT
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
     .lvl = 8,
     .species = SPECIES_GRUBBIN,
     .ability = ABILITY_SWARM,
-    .moves = {MOVE_VICE_GRIP, MOVE_BUG_BITE, MOVE_SPARK, MOVE_NONE}
+    .moves = {MOVE_VICE_GRIP, MOVE_BUG_BITE, MOVE_SPARK, MOVE_NONE},
+    .nature = NATURE_JOLLY
     }
 };
 
@@ -4057,23 +4061,17 @@ static const struct TrainerMon sParty_Marvin[] = {
     .species = SPECIES_FERROSEED,
     .ability = ABILITY_IRON_BARBS,
     .moves = {MOVE_BULLET_SEED, MOVE_CURSE, MOVE_ROLLOUT, MOVE_NONE},
-    .heldItem = ITEM_OCCA_BERRY
+    .heldItem = ITEM_OCCA_BERRY,
+    .nature = NATURE_CAREFUL
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 9,
+    .lvl = 8,
     .species = SPECIES_PYUKUMUKU,
     .ability = ABILITY_INNARDS_OUT,
     .moves = {MOVE_BIDE, MOVE_PAIN_SPLIT, MOVE_NONE, MOVE_NONE},
-    .heldItem = ITEM_JABOCA_BERRY
-    },
-    {
-    .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 9,
-    .species = SPECIES_DEDENNE,
-    .ability = ABILITY_CHEEK_POUCH,
-    .moves = {MOVE_THUNDER_SHOCK, MOVE_NUZZLE, MOVE_ELECTROWEB, MOVE_NONE},
-    .heldItem = ITEM_PETAYA_BERRY
+    .heldItem = ITEM_JABOCA_BERRY,
+    .nature = NATURE_SASSY
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
@@ -4081,7 +4079,17 @@ static const struct TrainerMon sParty_Marvin[] = {
     .species = SPECIES_QWILFISH_HISUIAN,
     .ability = ABILITY_IRON_BARBS,
     .moves = {MOVE_POISON_STING, MOVE_FELL_STINGER, MOVE_TOXIC, MOVE_NONE},
-    .heldItem = ITEM_BLACK_SLUDGE
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .nature = NATURE_JOLLY
+    },
+    {
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 10,
+    .species = SPECIES_DEDENNE,
+    .ability = ABILITY_CHEEK_POUCH,
+    .moves = {MOVE_THUNDER_SHOCK, MOVE_NUZZLE, MOVE_ELECTROWEB, MOVE_NONE},
+    .heldItem = ITEM_PETAYA_BERRY,
+    .nature = NATURE_TIMID
     },
 };
 
@@ -4258,21 +4266,24 @@ static const struct TrainerMon sParty_Allen[] = {
         .lvl = 8,
         .species = SPECIES_TAILLOW,
         .ability = ABILITY_GUTS,
-        .moves = {MOVE_WING_ATTACK, MOVE_GROWL, MOVE_QUICK_ATTACK, MOVE_NONE}
+        .moves = {MOVE_WING_ATTACK, MOVE_GROWL, MOVE_QUICK_ATTACK, MOVE_NONE},
+        .nature = NATURE_JOLLY
     },
     {
         .iv = TRAINER_PARTY_IVS_MAX,
         .lvl = 9,
         .species = SPECIES_HELIOPTILE,
         .ability = ABILITY_DRY_SKIN,
-        .moves = {MOVE_THUNDER_SHOCK, MOVE_THUNDER_WAVE, MOVE_TAIL_WHIP, MOVE_NONE}
+        .moves = {MOVE_THUNDER_SHOCK, MOVE_THUNDER_WAVE, MOVE_TAIL_WHIP, MOVE_NONE},
+        .nature = NATURE_TIMID
     },
     {
         .iv = TRAINER_PARTY_IVS_MAX,
         .lvl = 9,
         .species = SPECIES_SKITTY,
         .ability = ABILITY_CUTE_CHARM,
-        .moves = {MOVE_FAKE_OUT, MOVE_GROWL, MOVE_SING, MOVE_COVET}
+        .moves = {MOVE_FAKE_OUT, MOVE_GROWL, MOVE_SING, MOVE_COVET},
+        .nature = NATURE_ADAMANT,
     }
 };
 
@@ -7645,7 +7656,8 @@ static const struct TrainerMon sParty_Tiana[] = {
     .iv = TRAINER_PARTY_IVS_MAX,
     .moves = {MOVE_FAKE_OUT, MOVE_HYPNOSIS, MOVE_FURY_SWIPES, MOVE_NONE},
     .heldItem = ITEM_PECHA_BERRY,
-    .ability = ABILITY_LIMBER
+    .ability = ABILITY_LIMBER,
+    .nature = NATURE_JOLLY
     },
     {
     .lvl = 8,
@@ -7653,7 +7665,8 @@ static const struct TrainerMon sParty_Tiana[] = {
     .iv = TRAINER_PARTY_IVS_MAX,
     .moves = {MOVE_FURY_CUTTER, MOVE_QUICK_ATTACK, MOVE_TWISTER, MOVE_NONE},
     .ability = ABILITY_INNER_FOCUS,
-    .heldItem = ITEM_PECHA_BERRY
+    .heldItem = ITEM_PECHA_BERRY,
+    .nature = NATURE_NAUGHTY
     },
     {
     .lvl = 8,
@@ -7661,7 +7674,8 @@ static const struct TrainerMon sParty_Tiana[] = {
     .iv = TRAINER_PARTY_IVS_MAX,
     .moves = {MOVE_BITE, MOVE_SWAGGER, MOVE_NONE, MOVE_NONE},
     .ability = ABILITY_FUR_COAT,
-    .heldItem = ITEM_PECHA_BERRY
+    .heldItem = ITEM_PECHA_BERRY,
+    .nature = NATURE_SASSY
     }
 };
 
@@ -9009,36 +9023,48 @@ static const struct TrainerMon sParty_Sarah[] = {
 
 static const struct TrainerMon sParty_Darian[] = {
     {
-    .iv = TRAINER_PARTY_IVS(31, 31, 30, 30, 31, 31), // Hidden Power Grass
-    .lvl = 14,
-    .species = SPECIES_LUVDISC,
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 17,
+    .species = SPECIES_DEWPIDER,
+    .ability = ABILITY_WATER_BUBBLE,
+    .moves = {MOVE_INFESTATION, MOVE_BUG_BITE , MOVE_BUBBLE_BEAM,  MOVE_STICKY_WEB},
+    .heldItem = ITEM_SITRUS_BERRY,
+    .nature = NATURE_TIMID
+    },
+    {
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 16,
+    .species = SPECIES_INKAY,
     .ability = ABILITY_SWIFT_SWIM,
     .moves = {MOVE_RAIN_DANCE, MOVE_AQUA_JET , MOVE_WATER_PULSE, MOVE_HIDDEN_POWER},
     .heldItem = ITEM_LUM_BERRY
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 15,
+    .lvl = 16,
     .species = SPECIES_FEEBAS,
     .ability = ABILITY_SWIFT_SWIM,
     .moves = {MOVE_BRINE, MOVE_FLAIL , MOVE_NONE, MOVE_NONE},
-    .heldItem = ITEM_FOCUS_BAND
+    .heldItem = ITEM_FOCUS_BAND,
+    .nature = NATURE_HARDY
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 15,
-    .species = SPECIES_BUIZEL,
+    .lvl = 17,
+    .species = SPECIES_ELEKTRIK,
     .ability = ABILITY_SWIFT_SWIM,
-    .moves = {MOVE_SONIC_BOOM,  MOVE_AQUA_JET, MOVE_PURSUIT, MOVE_NONE},
-    .heldItem = ITEM_LUM_BERRY
+    .moves = {MOVE_SHOCK_WAVE, MOVE_MEGA_DRAIN , MOVE_SUPER_FANG, MOVE_TOXIC},
+    .heldItem = ITEM_LUM_BERRY,
+    .nature = NATURE_TIMID
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
     .lvl = 16,
-    .species = SPECIES_DEWPIDER,
-    .ability = ABILITY_WATER_BUBBLE,
-    .moves = {MOVE_INFESTATION, MOVE_BUG_BITE , MOVE_BUBBLE_BEAM,  MOVE_STICKY_WEB},
-    .heldItem = ITEM_WHITE_HERB
+    .species = SPECIES_BUIZEL,
+    .ability = ABILITY_SWIFT_SWIM,
+    .moves = {MOVE_SONIC_BOOM,  MOVE_AQUA_JET, MOVE_PURSUIT, MOVE_NONE},
+    .heldItem = ITEM_LUM_BERRY,
+    .nature = NATURE_JOLLY
     },
 };
 
