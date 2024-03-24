@@ -472,7 +472,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_MORELULL"
+                "species": "SPECIES_SHINX"
               },
               {
                 "min_level": 10,
@@ -482,7 +482,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_STUFFUL"
+                "species": "SPECIES_TEDDIURSA"
               },
               {
                 "min_level": 10,
@@ -492,7 +492,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_FURFROU"
+                "species": "SPECIES_ELECTRIKE"
               },
               {
                 "min_level": 10,
