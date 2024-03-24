@@ -8955,7 +8955,7 @@ static const struct LevelUpMove sSolrockLevelUpLearnset[] = {
 #if P_FAMILY_BARBOACH
 static const struct LevelUpMove sBarboachLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
-    LEVEL_UP_MOVE( 1, MOVE_MUD_SLAP),
+    LEVEL_UP_MOVE( 1, MOVE_MUD_SHOT),
     LEVEL_UP_MOVE( 6, MOVE_REST),
     LEVEL_UP_MOVE( 6, MOVE_SNORE),
     LEVEL_UP_MOVE(12, MOVE_WATER_PULSE),
@@ -8973,7 +8973,7 @@ static const struct LevelUpMove sWhiscashLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 1, MOVE_REST),
     LEVEL_UP_MOVE( 1, MOVE_SNORE),
-    LEVEL_UP_MOVE( 1, MOVE_MUD_SLAP),
+    LEVEL_UP_MOVE( 1, MOVE_MUD_SHOT),
     LEVEL_UP_MOVE( 1, MOVE_TICKLE),
     LEVEL_UP_MOVE( 1, MOVE_ZEN_HEADBUTT),
     LEVEL_UP_MOVE( 1, MOVE_BELCH),
