@@ -209,7 +209,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHATOT"
+                "species": "SPECIES_TAILLOW"
               },
               {
                 "min_level": 5,
@@ -492,7 +492,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_ELECTRIKE"
+                "species": "SPECIES_FURFROU"
               },
               {
                 "min_level": 10,
@@ -512,7 +512,7 @@
               {
                 "min_level": 10,
                 "max_level": 10,
-                "species": "SPECIES_TAILLOW"
+                "species": "SPECIES_FURFROU"
               },
               {
                 "min_level": 10,
@@ -11511,17 +11511,12 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_YUNGOOS"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ZIGZAGOON"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_PATRAT"
+                "species": "SPECIES_YUNGOOS"
               },
               {
                 "min_level": 5,
@@ -11546,7 +11541,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_MINCCINO"
+                "species": "SPECIES_ZIGZAGOON"
               },
               {
                 "min_level": 5,
@@ -11556,12 +11551,17 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_YUNGOOS"
+                "species": "SPECIES_SMOOCHUM"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_YUNGOOS"
+                "species": "SPECIES_ELEKID"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_ELEKID"
               }
             ]
           }
