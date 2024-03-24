@@ -7659,7 +7659,7 @@ static const struct TrainerMon sParty_Tiana[] = {
     .lvl = 8,
     .species = SPECIES_FURFROU,
     .iv = TRAINER_PARTY_IVS_MAX,
-    .moves = {MOVE_BITE, MOVE_BABY_DOLL_EYES, MOVE_SWAGGER , MOVE_NONE},
+    .moves = {MOVE_BITE, MOVE_SWAGGER, MOVE_NONE, MOVE_NONE},
     .ability = ABILITY_FUR_COAT,
     .heldItem = ITEM_PECHA_BERRY
     }
