@@ -7640,7 +7640,7 @@ static const struct TrainerMon sParty_MaxieMtChimney[] = {
 
 static const struct TrainerMon sParty_Tiana[] = {
     {
-    .lvl = 8,
+    .lvl = 7,
     .species = SPECIES_GLAMEOW,
     .iv = TRAINER_PARTY_IVS_MAX,
     .moves = {MOVE_FAKE_OUT, MOVE_HYPNOSIS, MOVE_FURY_SWIPES, MOVE_NONE},
@@ -7648,15 +7648,15 @@ static const struct TrainerMon sParty_Tiana[] = {
     .ability = ABILITY_LIMBER
     },
     {
-    .lvl = 9,
+    .lvl = 8,
     .species = SPECIES_FARFETCHD,
     .iv = TRAINER_PARTY_IVS_MAX,
-    .moves = {MOVE_FURY_CUTTER, MOVE_LEER, MOVE_REVENGE, MOVE_NONE},
+    .moves = {MOVE_FURY_CUTTER, MOVE_QUICK_ATTACK, MOVE_TWISTER, MOVE_NONE},
     .ability = ABILITY_INNER_FOCUS,
     .heldItem = ITEM_PECHA_BERRY
     },
     {
-    .lvl = 9,
+    .lvl = 8,
     .species = SPECIES_FURFROU,
     .iv = TRAINER_PARTY_IVS_MAX,
     .moves = {MOVE_BITE, MOVE_BABY_DOLL_EYES, MOVE_SWAGGER , MOVE_NONE},
