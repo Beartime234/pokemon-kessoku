@@ -3838,15 +3838,15 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Calvin1),
     },
 
-    [TRAINER_BILLY] =
+    [TRAINER_BILLY] =  // Actually Maven
     {
-        .trainerClass = TRAINER_CLASS_YOUNGSTER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_YOUNGSTER,
-        .trainerName = _("BILLY"),
+        .trainerClass = TRAINER_CLASS_HEX_MANIAC,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS,
+        .trainerPic = TRAINER_PIC_HEX_MANIAC,
+        .trainerName = _("MAVEN"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
+        .aiFlags = BASIC_TRAINER_AI_FLAGS,
         .party = TRAINER_PARTY(sParty_Billy),
     },
 
