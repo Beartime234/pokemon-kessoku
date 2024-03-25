@@ -1386,10 +1386,33 @@ static const struct TrainerMon sParty_Valerie5[] = {
 
 static const struct TrainerMon sParty_Cindy1[] = {
     {
-    .lvl = 7,
-    .species = SPECIES_ZIGZAGOON,
-    .heldItem = ITEM_NUGGET
-    }
+    .lvl = 13,
+    .species = SPECIES_CHIKORITA,
+    .ability = ABILITY_LEAF_GUARD,
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .moves = {MOVE_RAZOR_LEAF, MOVE_POISON_POWDER, MOVE_SYNTHESIS, MOVE_SUNNY_DAY},
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_CALM,
+    },
+    {
+    .lvl = 13,
+    .species = SPECIES_SUNFLORA,
+    .ability = ABILITY_CHLOROPHYLL,
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .moves = {MOVE_MEGA_DRAIN, MOVE_LEECH_SEED, MOVE_INGRAIN, MOVE_SUNNY_DAY},
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_TIMID,
+    },
+    {
+    .lvl = 14,
+    .species = SPECIES_FENNEKIN,
+    .ability = ABILITY_MAGICIAN,
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .moves = {MOVE_INCINERATE, MOVE_PSYBEAM, MOVE_HYPNOSIS, MOVE_SUNNY_DAY},
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_MODEST,
+    },
+
 };
 
 static const struct TrainerMon sParty_Daphne[] = {
