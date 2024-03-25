@@ -4037,7 +4037,7 @@ static const struct TrainerMon sParty_Calvin1[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 8,
+    .lvl = 7,
     .species = SPECIES_YUNGOOS,
     .ability = ABILITY_STAKEOUT,
     .moves = {MOVE_TACKLE, MOVE_LEER, MOVE_PURSUIT, MOVE_SAND_ATTACK},
@@ -4045,7 +4045,7 @@ static const struct TrainerMon sParty_Calvin1[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 8,
+    .lvl = 6,
     .species = SPECIES_GRUBBIN,
     .ability = ABILITY_SWARM,
     .moves = {MOVE_VICE_GRIP, MOVE_BUG_BITE, MOVE_SPARK, MOVE_NONE},
@@ -4060,7 +4060,7 @@ static const struct TrainerMon sParty_Marvin[] = {
     .lvl = 9,
     .species = SPECIES_FERROSEED,
     .ability = ABILITY_IRON_BARBS,
-    .moves = {MOVE_BULLET_SEED, MOVE_CURSE, MOVE_ROLLOUT, MOVE_NONE},
+    .moves = {MOVE_BULLET_SEED, MOVE_SPIKES, MOVE_ROLLOUT, MOVE_NONE},
     .heldItem = ITEM_OCCA_BERRY,
     .nature = NATURE_CAREFUL
     },
@@ -4087,7 +4087,7 @@ static const struct TrainerMon sParty_Marvin[] = {
     .lvl = 10,
     .species = SPECIES_DEDENNE,
     .ability = ABILITY_CHEEK_POUCH,
-    .moves = {MOVE_THUNDER_SHOCK, MOVE_NUZZLE, MOVE_ELECTROWEB, MOVE_NONE},
+    .moves = {MOVE_THUNDER_SHOCK, MOVE_NUZZLE, MOVE_NONE, MOVE_NONE},
     .heldItem = ITEM_PETAYA_BERRY,
     .nature = NATURE_TIMID
     },
@@ -4271,7 +4271,7 @@ static const struct TrainerMon sParty_Allen[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS_MAX,
-        .lvl = 9,
+        .lvl = 8,
         .species = SPECIES_HELIOPTILE,
         .ability = ABILITY_DRY_SKIN,
         .moves = {MOVE_THUNDER_SHOCK, MOVE_THUNDER_WAVE, MOVE_TAIL_WHIP, MOVE_NONE},
@@ -4279,7 +4279,7 @@ static const struct TrainerMon sParty_Allen[] = {
     },
     {
         .iv = TRAINER_PARTY_IVS_MAX,
-        .lvl = 9,
+        .lvl = 8,
         .species = SPECIES_SKITTY,
         .ability = ABILITY_CUTE_CHARM,
         .moves = {MOVE_FAKE_OUT, MOVE_GROWL, MOVE_SING, MOVE_COVET},
@@ -7818,7 +7818,7 @@ static const struct TrainerMon sParty_Crissy[] = {
 static const struct TrainerMon sParty_Rick[] = {
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 8,
+    .lvl = 7,
     .species = SPECIES_MINCCINO,
     .ability = ABILITY_TECHNICIAN,
     .moves = {MOVE_DOUBLE_SLAP, MOVE_GROWL, MOVE_NONE, MOVE_NONE}
@@ -7833,7 +7833,7 @@ static const struct TrainerMon sParty_Rick[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .lvl = 9,
+    .lvl = 8,
     .species = SPECIES_WOOPER,
     .ability = ABILITY_WATER_ABSORB,
     .moves = {MOVE_WATER_GUN, MOVE_TAIL_WHIP, MOVE_MUD_SHOT, MOVE_NONE}
@@ -9024,24 +9024,24 @@ static const struct TrainerMon sParty_Sarah[] = {
 static const struct TrainerMon sParty_Darian[] = {
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 17,
+    .lvl = 16,
     .species = SPECIES_DEWPIDER,
-    .ability = ABILITY_WATER_BUBBLE,
+    .ability = ABILITY_WATER_ABSORB,
     .moves = {MOVE_INFESTATION, MOVE_BUG_BITE , MOVE_BUBBLE_BEAM,  MOVE_STICKY_WEB},
     .heldItem = ITEM_SITRUS_BERRY,
     .nature = NATURE_TIMID
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 16,
+    .lvl = 15,
     .species = SPECIES_INKAY,
-    .ability = ABILITY_SWIFT_SWIM,
-    .moves = {MOVE_RAIN_DANCE, MOVE_AQUA_JET , MOVE_WATER_PULSE, MOVE_HIDDEN_POWER},
+    .ability = ABILITY_CONTRARY,
+    .moves = {MOVE_PAYBACK , MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_AERIAL_ACE},
     .heldItem = ITEM_LUM_BERRY
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 16,
+    .lvl = 15,
     .species = SPECIES_FEEBAS,
     .ability = ABILITY_SWIFT_SWIM,
     .moves = {MOVE_BRINE, MOVE_FLAIL , MOVE_NONE, MOVE_NONE},
@@ -9050,8 +9050,8 @@ static const struct TrainerMon sParty_Darian[] = {
     },
     {
     .iv = TRAINER_PARTY_IVS_MAX,
-    .lvl = 17,
-    .species = SPECIES_ELEKTRIK,
+    .lvl = 16,
+    .species = SPECIES_EELEKTRIK,
     .ability = ABILITY_SWIFT_SWIM,
     .moves = {MOVE_SHOCK_WAVE, MOVE_MEGA_DRAIN , MOVE_SUPER_FANG, MOVE_TOXIC},
     .heldItem = ITEM_LUM_BERRY,
@@ -9060,9 +9060,9 @@ static const struct TrainerMon sParty_Darian[] = {
     {
     .iv = TRAINER_PARTY_IVS_MAX,
     .lvl = 16,
-    .species = SPECIES_BUIZEL,
-    .ability = ABILITY_SWIFT_SWIM,
-    .moves = {MOVE_SONIC_BOOM,  MOVE_AQUA_JET, MOVE_PURSUIT, MOVE_NONE},
+    .species = SPECIES_CRABRAWLER,
+    .ability = ABILITY_HYPER_CUTTER,
+    .moves = {MOVE_POWER_UP_PUNCH,  MOVE_REVERSAL, MOVE_PURSUIT, MOVE_BUBBLE_BEAM},
     .heldItem = ITEM_LUM_BERRY,
     .nature = NATURE_JOLLY
     },
