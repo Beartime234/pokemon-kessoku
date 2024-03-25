@@ -295,17 +295,16 @@ Route104_Text_IvanPostBattle:
 	.string "I forgot I had to raise my POKéMON…$"
 
 Route104_Text_BillyIntro:
-	.string "Leaving footprints in the sand is\n"
-	.string "so fun!$"
+	.string "I hate the beach...$"
 
 Route104_Text_BillyDefeat:
 	.string "Waah! I got sand in my runners!\n"
 	.string "They're all gritty!$"
 
 Route104_Text_BillyPostBattle:
-	.string "I want to leave my footprints in\n"
-	.string "the sand everywhere, but they\l"
-	.string "disappear quickly…$"
+	.string "Why did I even come to the\n"
+	.string "beach... it's so hot\l"
+	.string "and sticky…$"
 
 Route104_Text_HaleyIntro:
 	.string "Should I…\n"
