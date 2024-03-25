@@ -129,5 +129,6 @@ text Route102_Text_MarvinDefeated {
 
 text Route102_Text_MarvinPostBattle {
 	"Also because you defeated me\p"
-	"You can now level up your POKéMON to lvl 16!"
+	"You can now level up your\n"
+	"POKéMON to lvl 16!"
 }

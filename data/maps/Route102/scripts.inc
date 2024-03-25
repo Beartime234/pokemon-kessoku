@@ -223,9 +223,9 @@ Route102_EventScript_Marvin::
 # 114 "data/maps/Route102/scripts.pory"
 	trainerbattle_single TRAINER_MARVIN, Route102_Text_MarvinIntro, Route102_Text_MarvinDefeated
 # 115 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_MarvinPostBattle, MSGBOX_AUTOCLOSE
-# 116 "data/maps/Route102/scripts.pory"
 	setflag FLAG_DEFEATED_MARVIN_BOSS
+# 116 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_MarvinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -241,4 +241,6 @@ Route102_Text_MarvinDefeated::
 
 Route102_Text_MarvinPostBattle::
 # 130 "data/maps/Route102/scripts.pory"
-	.string "You can now level up your POKéMON$"
+	.string "Also because you defeated me\p"
+	.string "You can now level up your\n"
+	.string "POKéMON to lvl 16!$"
