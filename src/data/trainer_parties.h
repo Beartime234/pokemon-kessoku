@@ -4093,15 +4093,35 @@ static const struct TrainerMon sParty_Marvin[] = {
     },
 };
 
+// Actually Maven Hex Maniac Route 104
 static const struct TrainerMon sParty_Billy[] = {
-    {
-    .lvl = 5,
-    .species = SPECIES_ZIGZAGOON,
+        {
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 12,
+    .species = SPECIES_MISDREAVUS,
+    .ability = ABILITY_LEVITATE,
+    .moves = {MOVE_CONFUSE_RAY, MOVE_HEX, MOVE_DARK_PULSE, MOVE_SUCKER_PUNCH},
+    .heldItem = ITEM_ORAN_BERRY,
+    .nature = NATURE_QUIET
     },
     {
-    .lvl = 7,
-    .species = SPECIES_SEEDOT,
-    }
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 12,
+    .species = SPECIES_SKRELP,
+    .ability = ABILITY_POISON_POINT,
+    .moves = {MOVE_WATER_PULSE, MOVE_FEINT_ATTACK, MOVE_PROTECT, MOVE_TOXIC},
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .nature = NATURE_SASSY
+    },
+    {
+    .iv = TRAINER_PARTY_IVS_MAX,
+    .lvl = 13,
+    .species = SPECIES_EKANS,
+    .ability = ABILITY_INTIMIDATE,
+    .moves = {MOVE_BITE, MOVE_GLARE, MOVE_ACID, MOVE_FIRE_FANG},
+    .heldItem = ITEM_BLACK_SLUDGE,
+    .nature = NATURE_JOLLY
+    },
 };
 
 static const struct TrainerMon sParty_Josh[] = {
