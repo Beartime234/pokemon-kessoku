@@ -2332,7 +2332,7 @@ EndlessCandy::
 # 1163 "data/maps/LittlerootTown/scripts.pory"
 	.string "That item will level up POKéMON\n"
 	.string "instantly. Up until the level cap of the\l"
-	.string "next gym.$"
+	.string "next boss or gym.$"
 
 GrindingIsCringe::
 # 1167 "data/maps/LittlerootTown/scripts.pory"
